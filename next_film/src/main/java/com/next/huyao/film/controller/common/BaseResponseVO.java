@@ -14,8 +14,8 @@ public final class BaseResponseVO<T> {
     //图片前缀
     private  String imgPre;
     //分页使用
-    private  Integer nowPage;
-    private  Integer totalPage;
+    private  long nowPage;
+    private  long totalPage;
 
     public  static<T> BaseResponseVO success(){
         BaseResponseVO baseResponseVO =  new BaseResponseVO();
@@ -41,6 +41,15 @@ public final class BaseResponseVO<T> {
         baseResponseVO.setData(data);
         return baseResponseVO;
     }
+    public  static<T> BaseResponseVO success(long nowPage,long totalPage,String imgPre,T data){
+        BaseResponseVO baseResponseVO =  new BaseResponseVO();
+        baseResponseVO.setNowPage(nowPage);
+        baseResponseVO.setTotalPage(totalPage);
+        baseResponseVO.setImgPre(imgPre);
+        baseResponseVO.setData(data);
+        return baseResponseVO;
+    }
+
 
 
     public  static<T> BaseResponseVO noLogin(){
