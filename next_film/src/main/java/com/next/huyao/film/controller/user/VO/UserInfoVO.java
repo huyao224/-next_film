@@ -5,8 +5,10 @@ import com.next.huyao.film.controller.common.BaseVO;
 import com.next.huyao.film.controller.common.exception.ParamErrorException;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class UserInfoVO extends BaseVO {
+public class UserInfoVO extends BaseVO implements Serializable {
     private Integer id;
     private Integer uuid;
     private String username;

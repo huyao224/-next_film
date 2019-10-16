@@ -6,9 +6,11 @@ import com.next.huyao.film.controller.common.exception.ParamErrorException;
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
+import java.io.Serializable;
+
+
 @Data
-public class EnrollUserVO extends BaseVO {
+public class EnrollUserVO extends BaseVO implements Serializable {
     private String username;
     private String password;
     private String email;

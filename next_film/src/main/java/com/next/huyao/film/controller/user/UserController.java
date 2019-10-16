@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "register",method = RequestMethod.POST)
-    public BaseResponseVO register(@RequestBody EnrollUserVO enrollUserVO) throws CommonServiceException,NextfilmException, ParamErrorException {
+    public BaseResponseVO register(@RequestBody EnrollUserVO enrollUserVO) throws CommonServiceException, ParamErrorException {
         //贫血模型与充血模型
         enrollUserVO.checkParam();
 
@@ -62,7 +62,7 @@ public class UserController {
         return BaseResponseVO.success(userInfoVO);
     }
 
-    @RequestMapping(value = "getUserInfo",method = RequestMethod.POST)
+    @RequestMapping(value = "updateUserInfo",method = RequestMethod.POST)
     public BaseResponseVO updateUserInfo(@RequestBody UserInfoVO userInfoVO) throws CommonServiceException,ParamErrorException{
         userInfoVO.checkParam();
 

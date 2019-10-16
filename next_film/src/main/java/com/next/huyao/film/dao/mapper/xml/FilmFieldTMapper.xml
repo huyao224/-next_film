@@ -75,6 +75,6 @@
                 dict.seat_address AS seatFile
             FROM film_field_t fe LEFT JOIN film_hall_dict_t dict
             ON fe.hall_id = dict.UUID
-            where fe.UUID = #{fieldId}
+            where fe.UUID = #{filedId}
     </select>
 </mapper>

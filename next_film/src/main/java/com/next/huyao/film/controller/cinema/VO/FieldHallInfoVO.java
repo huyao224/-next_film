@@ -8,4 +8,5 @@ public class FieldHallInfoVO {
     private String hallName;
     private String price;
     private String seatFile;
+    private String soldSeats;
 }

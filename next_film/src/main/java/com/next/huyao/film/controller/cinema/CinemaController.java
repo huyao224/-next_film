@@ -12,6 +12,8 @@ import com.next.huyao.film.controller.cinema.VO.request.DescribeCinemaRequestVO;
 import com.next.huyao.film.controller.cinema.VO.response.FieldInfoRequestVO;
 import com.next.huyao.film.controller.common.BaseResponseVO;
 import com.next.huyao.film.service.cinema.CinemaServiceAPI;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,10 @@ public class CinemaController {
     @Autowired
     private CinemaServiceAPI cinemaServiceAPI;
 
+    @ApiOperation(value = "获取场次", notes = "获取场次")
+    @ApiImplicitParam(name = "cinemaId",
+            value = "入参：影院ID",
+            paramType = "query", required = true, dataType = "string")
     @RequestMapping(value = "/getFields",method = RequestMethod.GET)
     public BaseResponseVO getFields(String cinemaId){
         //获取电影院信息

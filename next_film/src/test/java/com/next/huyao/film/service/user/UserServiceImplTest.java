@@ -1,6 +1,7 @@
 package com.next.huyao.film.service.user;
 
 import com.next.huyao.film.controller.user.VO.EnrollUserVO;
+import com.next.huyao.film.controller.user.VO.UserInfoVO;
 import com.next.huyao.film.service.common.exception.CommonServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,12 +18,7 @@ public class UserServiceImplTest {
     private UserServiceAPI userServiceAPI;
     @Test
     public void userEnroll() throws CommonServiceException {
-        EnrollUserVO enrollUserVO =  EnrollUserVO.builder()
-                .username("huyao")
-                .password("123456")
-                .phone("13626223683")
-                .address("02-05-06").build();
-        userServiceAPI.userEnroll(enrollUserVO);
+
     }
 
     @Test
@@ -30,7 +26,9 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void userAuth() {
+    public void userAuth() throws CommonServiceException {
+        Boolean aBoolean = userServiceAPI.userAuth("string", "string");
+        System.out.println(aBoolean);
     }
 
     @Test
